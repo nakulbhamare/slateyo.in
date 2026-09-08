@@ -17,6 +17,7 @@ import { ExploreCafesModal } from './components/modals/ExploreCafesModal';
 import { ShareMomentModal } from './components/modals/ShareMomentModal';
 import { CafeOwnerModal } from './components/modals/CafeOwnerModal';
 import { QRScanModal } from './components/modals/QRScanModal';
+import { ContactModal } from './components/modals/ContactModal';
 import { ToastContainer } from './components/common/ToastContainer';
 
 export const App: React.FC = () => {
@@ -63,6 +64,7 @@ export const App: React.FC = () => {
         <ShareMomentModal />
         <CafeOwnerModal />
         <QRScanModal />
+        <ContactModal />
         <ToastContainer />
 
       </div>

@@ -28,6 +28,8 @@ interface AppContextType {
   setIsOwnerModalOpen: (open: boolean) => void;
   isQRScanModalOpen: boolean;
   setIsQRScanModalOpen: (open: boolean) => void;
+  isContactModalOpen: boolean;
+  setIsContactModalOpen: (open: boolean) => void;
   
   // Lightbox
   activeLightboxMoment: Moment | null;
@@ -55,6 +57,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [isShareOpen, setIsShareOpen] = useState<boolean>(false);
   const [isOwnerModalOpen, setIsOwnerModalOpen] = useState<boolean>(false);
   const [isQRScanModalOpen, setIsQRScanModalOpen] = useState<boolean>(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false);
   const [activeLightboxMoment, setActiveLightboxMoment] = useState<Moment | null>(null);
   const [selectedCafe, setSelectedCafe] = useState<Cafe | null>(null);
   
@@ -144,6 +147,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         setIsOwnerModalOpen,
         isQRScanModalOpen,
         setIsQRScanModalOpen,
+        isContactModalOpen,
+        setIsContactModalOpen,
         activeLightboxMoment,
         setActiveLightboxMoment,
         selectedCafe,
