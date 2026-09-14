@@ -30,6 +30,7 @@
 }
 
 @layer utilities {
+
   /* Editorial font styling */
   .font-editorial-italic {
     font-family: 'Newsreader', Georgia, serif;
@@ -61,12 +62,10 @@
 
   /* Shimmer effect for buttons & badges */
   .bg-shimmer {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.25) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%);
     background-size: 200% 100%;
   }
 
@@ -75,13 +74,16 @@
     width: 8px;
     height: 8px;
   }
+
   ::-webkit-scrollbar-track {
     background: #FAF8F5;
   }
+
   ::-webkit-scrollbar-thumb {
     background: #DDD4C4;
     border-radius: 4px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
     background: #C4BAA9;
   }
@@ -90,13 +92,16 @@
   .dark-modal-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
+
   .dark-modal-scrollbar::-webkit-scrollbar-track {
     background: transparent;
   }
+
   .dark-modal-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 9999px;
   }
+
   .dark-modal-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
   }

@@ -10,6 +10,8 @@ import {
   ArrowUpRight,
   Filter,
 } from 'lucide-react';
+import { BounceCards } from '../ui/BounceCards';
+import { StarBorder } from '../ui/StarBorder';
 
 export const CommunityMomentsSection: React.FC = () => {
   const { moments, toggleLikeMoment, setActiveLightboxMoment, setIsShareOpen } = useApp();
@@ -53,6 +55,67 @@ export const CommunityMomentsSection: React.FC = () => {
             </button>
           </div>
         </div>
+
+        {/* Interactive Spotlight: BounceCards Gallery with StarBorder from React Bits */}
+        <StarBorder
+          as="div"
+          className="w-full mb-12 shadow-soft-md"
+          color="#ED1B77"
+          speed="5s"
+          thickness={2}
+          backgroundColor="#FFFFFF"
+          borderColor="rgba(232, 226, 214, 0.85)"
+          borderRadius={24}
+        >
+          <div className="p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="space-y-3 max-w-md text-center lg:text-left">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-light text-pink-brand text-[11px] font-black uppercase tracking-wider">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>Interactive Moments Stack</span>
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-charcoal tracking-tight">
+                  Trending Café Memories
+                </h3>
+                <p className="text-xs sm:text-sm text-brand-charcoal/70 font-medium leading-relaxed">
+                  Hover over the stack to push sibling cards aside with physics bounce. Click any photo to preview the community moment.
+                </p>
+                <div className="pt-2 flex items-center justify-center lg:justify-start gap-4 text-[11px] font-bold text-brand-muted">
+                  <span className="flex items-center gap-1">
+                    <Heart className="w-3.5 h-3.5 text-pink-brand fill-pink-brand" /> 1.4k+ Total Likes
+                  </span>
+                  <span>•</span>
+                  <span>50+ Partner Cafés</span>
+                </div>
+              </div>
+
+              <div className="flex justify-center items-center py-4 w-full lg:w-auto overflow-visible">
+                <BounceCards
+                  key={activeCategory}
+                  images={(filteredMoments.length >= 5 ? filteredMoments : moments).slice(0, 5).map((m) => m.imageUrl)}
+                  containerWidth={420}
+                  containerHeight={220}
+                  animationDelay={0.2}
+                  animationStagger={0.07}
+                  easeType="elastic.out(1, 0.7)"
+                  transformStyles={[
+                    'rotate(8deg) translate(-130px)',
+                    'rotate(3deg) translate(-65px)',
+                    'rotate(-2deg)',
+                    'rotate(-7deg) translate(65px)',
+                    'rotate(5deg) translate(130px)'
+                  ]}
+                  enableHover={true}
+                  onCardClick={(idx) => {
+                    const pool = filteredMoments.length >= 5 ? filteredMoments : moments;
+                    if (pool[idx]) setActiveLightboxMoment(pool[idx]);
+                  }}
+                  className="scale-90 sm:scale-100"
+                />
+              </div>
+            </div>
+          </div>
+        </StarBorder>
 
         {/* Filter Category Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">

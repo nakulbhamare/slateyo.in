@@ -29,7 +29,7 @@ export const QRScanModal: React.FC = () => {
       />
 
       <div className="relative z-10 w-full max-w-sm bg-white rounded-3xl overflow-hidden shadow-2xl border border-cream-border text-center">
-        
+
         {/* Header */}
         <div className="p-5 bg-cream-100 border-b border-cream-border flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -49,7 +49,7 @@ export const QRScanModal: React.FC = () => {
             <>
               {/* Camera Viewfinder Mockup */}
               <div className="relative w-60 h-60 mx-auto rounded-2xl bg-brand-slate overflow-hidden flex items-center justify-center border-2 border-pink-brand/40 shadow-inner">
-                
+
                 {/* Background Atmosphere Image */}
                 <img
                   src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=400&q=80"

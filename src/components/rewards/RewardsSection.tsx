@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Plus,
 } from 'lucide-react';
+import { ClickSpark } from '../ui/ClickSpark';
 
 export const RewardsSection: React.FC = () => {
   const { userPoints, addPoints, setIsShareOpen } = useApp();
@@ -86,7 +87,7 @@ export const RewardsSection: React.FC = () => {
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-pink-light/60 rounded-full blur-3xl -z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pink-light text-pink-brand text-xs font-bold uppercase tracking-wider border border-pink-subtle shadow-soft-sm">
@@ -106,11 +107,11 @@ export const RewardsSection: React.FC = () => {
 
         {/* Live Points Progress & Rewards Cards Display */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Interactive Slate Points Progress Card (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white rounded-[2.5rem] p-7 sm:p-8 border border-cream-border shadow-soft-xl relative overflow-hidden">
-              
+
               {/* Card Header */}
               <div className="flex items-center justify-between pb-6 border-b border-cream-border/70">
                 <div>
@@ -149,17 +150,15 @@ export const RewardsSection: React.FC = () => {
 
               {/* Target Reward Banner */}
               <div
-                className={`p-4 rounded-2xl border transition-all ${
-                  isUnlocked
+                className={`p-4 rounded-2xl border transition-all ${isUnlocked
                     ? 'bg-pink-light/70 border-pink-brand/40 shadow-soft-md'
                     : 'bg-cream-100 border-cream-border'
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-3">
                   <div
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                      isUnlocked ? 'bg-pink-brand text-white shadow-pink-glow' : 'bg-cream-300 text-brand-slate'
-                    }`}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${isUnlocked ? 'bg-pink-brand text-white shadow-pink-glow' : 'bg-cream-300 text-brand-slate'
+                      }`}
                   >
                     <Coffee className="w-5 h-5" />
                   </div>
@@ -183,13 +182,15 @@ export const RewardsSection: React.FC = () => {
 
               {/* Interactive Simulator Button */}
               <div className="pt-6 border-t border-cream-border/70 flex flex-col gap-2.5">
-                <button
-                  onClick={() => addPoints(20, 'Photo shared at Subko Coffee')}
-                  className="w-full py-3.5 rounded-xl bg-pink-brand hover:bg-pink-brandHover text-white text-xs font-black flex items-center justify-center gap-2 shadow-pink-glow active:scale-95 transition-all"
-                >
-                  <Plus className="w-4 h-4" />
-                  <span>Simulate Sharing a Moment (+20 Points)</span>
-                </button>
+                <ClickSpark sparkColor="#ED1B77" sparkCount={12} sparkRadius={22} className="w-full">
+                  <button
+                    onClick={() => addPoints(20, 'Photo shared at Subko Coffee')}
+                    className="w-full py-3.5 rounded-xl bg-pink-brand hover:bg-pink-brandHover text-white text-xs font-black flex items-center justify-center gap-2 shadow-pink-glow active:scale-95 transition-all"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>Simulate Sharing a Moment (+20 Points)</span>
+                  </button>
+                </ClickSpark>
 
                 <p className="text-[10px] text-center text-brand-muted font-medium">
                   Tap to test the real-time progress & reward unlock effect!
@@ -219,19 +220,17 @@ export const RewardsSection: React.FC = () => {
                   <div
                     key={reward.id}
                     onClick={() => setSelectedRewardId(reward.id)}
-                    className={`p-4 sm:p-5 rounded-2xl bg-white border transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 cursor-pointer ${
-                      selectedRewardId === reward.id
+                    className={`p-4 sm:p-5 rounded-2xl bg-white border transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 cursor-pointer ${selectedRewardId === reward.id
                         ? 'border-pink-brand shadow-soft-lg ring-1 ring-pink-brand/30'
                         : 'border-cream-border/80 shadow-soft-sm hover:border-cream-border hover:shadow-soft-md'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start gap-4">
                       <div
-                        className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                          canAfford
+                        className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${canAfford
                             ? 'bg-pink-light text-pink-brand'
                             : 'bg-cream-200 text-brand-muted'
-                        }`}
+                          }`}
                       >
                         <Icon className="w-6 h-6" />
                       </div>
@@ -256,19 +255,20 @@ export const RewardsSection: React.FC = () => {
                         {reward.points} PTS
                       </span>
 
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleClaim(reward.title, reward.points);
-                        }}
-                        className={`px-4 py-1.5 rounded-full text-xs font-black transition-all ${
-                          canAfford
-                            ? 'bg-pink-brand text-white shadow-pink-glow hover:bg-pink-brandHover active:scale-95'
-                            : 'bg-cream-200 text-brand-muted hover:bg-cream-300'
-                        }`}
-                      >
-                        {canAfford ? 'Claim Reward' : `${reward.points - userPoints} pts left`}
-                      </button>
+                      <ClickSpark sparkColor={canAfford ? '#ED1B77' : '#F59E0B'} sparkCount={10} sparkRadius={20}>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleClaim(reward.title, reward.points);
+                          }}
+                          className={`px-4 py-1.5 rounded-full text-xs font-black transition-all ${canAfford
+                              ? 'bg-pink-brand text-white shadow-pink-glow hover:bg-pink-brandHover active:scale-95'
+                              : 'bg-cream-200 text-brand-muted hover:bg-cream-300'
+                            }`}
+                        >
+                          {canAfford ? 'Claim Reward' : `${reward.points - userPoints} pts left`}
+                        </button>
+                      </ClickSpark>
                     </div>
                   </div>
                 );

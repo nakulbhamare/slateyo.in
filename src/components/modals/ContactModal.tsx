@@ -81,9 +81,8 @@ export const ContactModal: React.FC = () => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-all duration-300 ${
-        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-      }`}
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
@@ -91,16 +90,14 @@ export const ContactModal: React.FC = () => {
     >
       {/* Dark Blurred Backdrop */}
       <div
-        className={`fixed inset-0 bg-[#070C14]/80 backdrop-blur-md transition-opacity duration-300 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`fixed inset-0 bg-[#070C14]/80 backdrop-blur-md transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
       />
 
       {/* Main Glass Modal Card */}
       <div
-        className={`relative z-10 w-full max-w-xl sm:max-w-2xl bg-[#0E1726]/95 backdrop-blur-2xl text-white rounded-[24px] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col max-h-[90vh] transition-all duration-300 ease-out transform ${
-          isVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-3 opacity-0'
-        }`}
+        className={`relative z-10 w-full max-w-xl sm:max-w-2xl bg-[#0E1726]/95 backdrop-blur-2xl text-white rounded-[24px] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col max-h-[90vh] transition-all duration-300 ease-out transform ${isVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-3 opacity-0'
+          }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Subtle Pink/Purple Gradient Glow Background Effects */}
@@ -136,7 +133,7 @@ export const ContactModal: React.FC = () => {
 
         {/* Scrollable Content Body */}
         <div className="relative z-10 overflow-y-auto dark-modal-scrollbar px-6 sm:px-8 py-6 space-y-6 text-left text-white">
-          
+
           {/* Section 1: General Enquiries */}
           <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] hover:bg-white/[0.05] border border-white/10 transition-colors space-y-3">
             <div className="flex items-center gap-2">

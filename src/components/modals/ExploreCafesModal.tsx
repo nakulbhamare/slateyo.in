@@ -38,7 +38,7 @@ export const ExploreCafesModal: React.FC = () => {
       />
 
       <div className="relative z-10 w-full max-w-4xl bg-cream-100 rounded-3xl overflow-hidden shadow-2xl border border-cream-border max-h-[90vh] flex flex-col">
-        
+
         {/* Modal Header */}
         <div className="p-6 bg-brand-slate text-white border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -80,11 +80,10 @@ export const ExploreCafesModal: React.FC = () => {
           <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
             <button
               onClick={() => setSelectedCity('All')}
-              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                selectedCity === 'All'
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${selectedCity === 'All'
                   ? 'bg-brand-slate text-white'
                   : 'bg-white text-brand-charcoal hover:bg-cream-100 border border-cream-border'
-              }`}
+                }`}
             >
               All Cities
             </button>
@@ -92,11 +91,10 @@ export const ExploreCafesModal: React.FC = () => {
               <button
                 key={city}
                 onClick={() => setSelectedCity(city)}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
-                  selectedCity === city
+                className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${selectedCity === city
                     ? 'bg-pink-brand text-white shadow-pink-glow'
                     : 'bg-white text-brand-charcoal hover:bg-cream-100 border border-cream-border'
-                }`}
+                  }`}
               >
                 {city}
               </button>
@@ -126,7 +124,7 @@ export const ExploreCafesModal: React.FC = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    
+
                     <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-full bg-white/90 text-brand-slate text-xs font-black flex items-center gap-1 shadow-sm">
                       <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                       <span>{cafe.rating}</span>

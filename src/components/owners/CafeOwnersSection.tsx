@@ -8,6 +8,7 @@ import {
   Heart,
   QrCode,
 } from 'lucide-react';
+import { GradientWaves } from '../ui/GradientWaves';
 
 export const CafeOwnersSection: React.FC = () => {
   const { setIsOwnerModalOpen } = useApp();
@@ -45,6 +46,32 @@ export const CafeOwnersSection: React.FC = () => {
 
   return (
     <section id="for-cafes" className="py-20 lg:py-28 bg-brand-slate text-white relative overflow-hidden">
+      {/* Background WebGL Gradient Waves from React Bits */}
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <GradientWaves
+          horizonColor="#0E1726"
+          waveColor="#ED1B77"
+          crestColor="#FCE7F1"
+          speed={0.35}
+          amplitude={2.0}
+          waveScale={0.5}
+          waveRatio={0.8}
+          swell={25}
+          turbulence={15}
+          tilt={1.15}
+          zoom={1.05}
+          height={5.2}
+          fogDepth={18}
+          detail="medium"
+          brightness={1.05}
+          opacity={0.8}
+          mouseInteraction={true}
+          parallaxStrength={0.35}
+          grain={true}
+          grainIntensity={0.03}
+        />
+      </div>
+
       {/* Subtle Glow Accents */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-pink-brand/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-brand-navy rounded-full blur-3xl pointer-events-none" />

@@ -19,12 +19,13 @@ import { CafeOwnerModal } from './components/modals/CafeOwnerModal';
 import { QRScanModal } from './components/modals/QRScanModal';
 import { ContactModal } from './components/modals/ContactModal';
 import { ToastContainer } from './components/common/ToastContainer';
+import { Agentation } from 'agentation';
 
 export const App: React.FC = () => {
   return (
     <AppProvider>
       <div className="min-h-screen bg-cream-100 text-brand-charcoal flex flex-col selection:bg-pink-subtle selection:text-pink-brand">
-        
+
         {/* Section 01: Navigation */}
         <Navbar />
 
@@ -66,6 +67,9 @@ export const App: React.FC = () => {
         <QRScanModal />
         <ContactModal />
         <ToastContainer />
+
+        {/* Agentation Visual Feedback Tool */}
+        <Agentation />
 
       </div>
     </AppProvider>

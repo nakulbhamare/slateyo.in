@@ -13,6 +13,7 @@ import {
   Compass,
   Star,
 } from 'lucide-react';
+import { ShinyText } from '../ui/ShinyText';
 
 export const HeroSection: React.FC = () => {
   const {
@@ -41,13 +42,32 @@ export const HeroSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Column: Copy & CTAs (7 cols on desktop) */}
           <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-center lg:text-left">
-            {/* Top Brand Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream-200 border border-cream-border text-xs font-bold text-brand-slate shadow-soft-sm">
-              <span className="flex h-2 w-2 rounded-full bg-pink-brand animate-ping" />
-              <span className="text-brand-slate font-extrabold">The Digital Social Space for Cafés</span>
+            {/* Top Eyebrow Section: Coming Soon above The Digital Social Space for Cafés */}
+            <div className="space-y-3.5 flex flex-col items-center lg:items-start">
+              {/* Coming Soon - Larger Size, Borderless & Prominent */}
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-pink-light text-pink-brand text-base sm:text-lg font-black tracking-wider uppercase shadow-pink-glow/25 hover:scale-105 transition-all cursor-default">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-brand opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-brand" />
+                </span>
+                <Sparkles className="w-5 h-5 text-pink-brand animate-pulse" />
+                <span className="font-black tracking-wide">Coming Soon !</span>
+              </div>
+
+              {/* Brand Concept Pill: The Digital Social Space for Cafés */}
+              <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-cream-200 text-brand-slate text-sm sm:text-base font-bold shadow-soft-sm">
+                <ShinyText
+                  text="The Digital Social Space for Cafés"
+                  speed={2.5}
+                  color="#0E1726"
+                  shineColor="#ED1B77"
+                  spread={120}
+                  className="font-extrabold"
+                />
+              </div>
             </div>
 
             {/* Main Headline with Editorial Accent */}
@@ -114,16 +134,16 @@ export const HeroSection: React.FC = () => {
 
           {/* Right Column: Exact Mobile UI Matching Reference Screenshot & Floating Badges (6 cols) */}
           <div className="lg:col-span-6 relative flex items-center justify-center pt-2 lg:pt-0">
-            
+
             {/* Ambient Image Backdrop Card & iPhone Wrapper */}
             <div className="relative w-full max-w-[325px] sm:max-w-[345px]">
-              
+
               {/* iPhone Hardware Shell */}
               <div className="relative z-10 bg-slate-950 rounded-[3rem] p-2.5 shadow-[0_30px_90px_-20px_rgba(15,23,42,0.55),0_0_0_1px_rgba(255,255,255,0.2)] ring-1 ring-slate-800 border-[3px] border-slate-900 overflow-hidden">
-                
+
                 {/* iPhone Screen */}
                 <div className="bg-white rounded-[2.4rem] overflow-hidden flex flex-col relative select-none">
-                  
+
                   {/* Top Half: Landscape Hero Atmosphere Image with iOS Status & Floating Circular Glass Buttons */}
                   <div className="relative h-56 w-full overflow-hidden">
                     <img
@@ -185,7 +205,7 @@ export const HeroSection: React.FC = () => {
 
                   {/* Bottom Half: Sliding White Card Sheet Overlapping the Hero Image */}
                   <div className="relative -mt-8 z-10 bg-white rounded-t-[2rem] px-4 pt-2.5 pb-3 flex-1 flex flex-col justify-between shadow-[0_-8px_25px_rgba(0,0,0,0.12)]">
-                    
+
                     {/* Top Sheet Pull Handle Pill */}
                     <div className="w-8 h-1 bg-slate-200 rounded-full mx-auto mb-2" />
 
@@ -247,7 +267,7 @@ export const HeroSection: React.FC = () => {
 
                     {/* Horizontal Moments Carousel Cards */}
                     <div className="mt-2 flex gap-2.5 overflow-hidden">
-                      
+
                       {/* Main Featured Card 1 */}
                       <div className="w-[74%] shrink-0 bg-slate-50/80 rounded-2xl p-2 border border-slate-100 shadow-soft-sm flex flex-col justify-between">
                         {/* Image Container with Floating Heart */}
@@ -322,7 +342,7 @@ export const HeroSection: React.FC = () => {
               </div>
 
               {/* Floating UI Badges Around Phone */}
-              
+
               {/* Badge 1: New Moment Shared (Top Left) */}
               <div className="absolute -top-5 -left-6 sm:-left-12 z-20">
                 <FloatingBadge

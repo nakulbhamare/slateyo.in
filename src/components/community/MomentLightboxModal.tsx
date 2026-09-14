@@ -25,7 +25,7 @@ export const MomentLightboxModal: React.FC = () => {
 
       {/* Modal Container */}
       <div className="relative z-10 w-full max-w-3xl bg-white rounded-3xl overflow-hidden shadow-2xl border border-cream-border flex flex-col md:flex-row max-h-[90vh]">
-        
+
         {/* Close Button */}
         <button
           onClick={() => setActiveLightboxMoment(null)}
@@ -50,7 +50,7 @@ export const MomentLightboxModal: React.FC = () => {
         {/* Right Column: Details & Likes */}
         <div className="md:w-2/5 p-6 flex flex-col justify-between space-y-6 text-left overflow-y-auto">
           <div className="space-y-4">
-            
+
             {/* Author Header */}
             <div className="flex items-center gap-3 pb-3 border-b border-cream-border">
               <img
@@ -95,16 +95,14 @@ export const MomentLightboxModal: React.FC = () => {
           <div className="pt-4 border-t border-cream-border flex items-center justify-between">
             <button
               onClick={() => toggleLikeMoment(activeLightboxMoment.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-extrabold transition-all ${
-                activeLightboxMoment.isLiked
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-extrabold transition-all ${activeLightboxMoment.isLiked
                   ? 'bg-pink-brand text-white shadow-pink-glow'
                   : 'bg-pink-light text-pink-brand hover:bg-pink-brand hover:text-white'
-              }`}
+                }`}
             >
               <Heart
-                className={`w-4 h-4 ${
-                  activeLightboxMoment.isLiked ? 'fill-white' : 'fill-pink-brand'
-                }`}
+                className={`w-4 h-4 ${activeLightboxMoment.isLiked ? 'fill-white' : 'fill-pink-brand'
+                  }`}
               />
               <span>{activeLightboxMoment.likesCount} Likes</span>
             </button>

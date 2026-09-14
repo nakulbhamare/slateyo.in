@@ -54,7 +54,7 @@ export const ShareMomentModal: React.FC = () => {
       />
 
       <div className="relative z-10 w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl border border-cream-border max-h-[92vh] flex flex-col text-left">
-        
+
         {/* Header */}
         <div className="p-6 bg-cream-100 border-b border-cream-border flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -79,7 +79,7 @@ export const ShareMomentModal: React.FC = () => {
 
         {/* Form Body */}
         <form onSubmit={handleSubmit} className="p-6 space-y-5 overflow-y-auto flex-1">
-          
+
           {/* Café Selector */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-brand-slate">Select Café Location</label>
@@ -117,11 +117,10 @@ export const ShareMomentModal: React.FC = () => {
                   key={i}
                   type="button"
                   onClick={() => setSelectedImage(img.url)}
-                  className={`w-14 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all ${
-                    selectedImage === img.url
+                  className={`w-14 h-14 rounded-xl overflow-hidden shrink-0 border-2 transition-all ${selectedImage === img.url
                       ? 'border-pink-brand ring-2 ring-pink-brand/30 scale-105'
                       : 'border-cream-border opacity-70 hover:opacity-100'
-                  }`}
+                    }`}
                 >
                   <img src={img.url} alt={img.label} className="w-full h-full object-cover" />
                 </button>

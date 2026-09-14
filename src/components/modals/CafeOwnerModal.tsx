@@ -36,7 +36,7 @@ export const CafeOwnerModal: React.FC = () => {
       />
 
       <div className="relative z-10 w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl border border-cream-border text-left">
-        
+
         {/* Header */}
         <div className="p-6 bg-brand-slate text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -80,7 +80,7 @@ export const CafeOwnerModal: React.FC = () => {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            
+
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-brand-slate">Café / Roastery Name</label>
               <div className="relative">
